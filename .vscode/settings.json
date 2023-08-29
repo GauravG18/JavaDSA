@@ -1,0 +1,17 @@
+{
+    "java.project.sourcePaths": [
+        "stringQues",
+        "src",
+        "quesArray",
+        "mostImportant",
+        "hash",
+        "Recursion",
+        "ImpQuesRecur",
+        "heapDataStructure"
+    ],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar"
+    ],
+    "java.debug.settings.onBuildFailureProceed": true
+}
