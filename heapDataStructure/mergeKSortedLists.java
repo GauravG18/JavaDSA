@@ -25,6 +25,7 @@ public class mergeKSortedLists {
     }
 
     public static ArrayList<Integer> merge(ArrayList<ArrayList<Integer>> lists){
-        
+        ArrayList<Integer> ans =new ArrayList<>();
+        return ans;
     }
 }
