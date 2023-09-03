@@ -2,7 +2,11 @@ import java.util.List;
 
 public class LL {
     Node head;
+    private int size;
 
+    LL(){
+        this.size=0;
+    }
     class Node {
         String data;
         Node next;
@@ -10,6 +14,7 @@ public class LL {
         Node(String data) {
             this.data = data;
             this.next = null;
+            size++;
         }
     }
 
@@ -40,6 +45,38 @@ public class LL {
         currNode.next = newNode;
     }
 
+    public void removeFirst() {
+        if (head == null) {
+            return;
+        }
+
+        head = head.next;
+        size--;
+        return;
+    }
+
+    public void removeLast() {
+        if (head == null) {
+            return;
+        }
+
+        size--;
+        if (head.next == null) {
+            head = null;
+            return;
+        }
+
+        Node secondLast = head;
+        Node last = head.next;
+        while (last.next != null) {
+            last = last.next;
+            secondLast = secondLast.next;
+        }
+
+        secondLast.next = null;
+        return;
+    }
+
     public void printList() {
         if (head == null) {
             System.out.println("list is empty");
@@ -49,11 +86,16 @@ public class LL {
         Node currNode = head;
         while (currNode != null) {
             System.out.print(currNode.data + " -> ");
+            // System.out.println(currNode.data);
             currNode = currNode.next;
         }
 
         System.out.println("NULL");
 
+    }
+
+    public int getSize(){
+        return size;
     }
 
     public static void main(String[] args) {
@@ -62,5 +104,13 @@ public class LL {
         list.addFirst("we");
         list.addLast("man");
         list.printList();
+
+        list.removeFirst();
+        list.printList();
+
+        list.removeLast();
+        list.printList();
+
+        System.out.println(list.getSize());;
     }
 }
